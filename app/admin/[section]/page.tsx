@@ -1,7 +1,7 @@
 export default function SectionPage({
   params,
 }: {
-  params: { section: string };
+  params: Promise<{ section: string }>;
 }) {
   return <div></div>;
 }

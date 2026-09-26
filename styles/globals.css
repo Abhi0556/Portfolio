@@ -1,3 +1,250 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ─── styles/globals.css ─────────────────────────────────────── */
+:root {
+
+  /* ── FOUNDATION COLORS ────────────────────────────────────── */
+
+  /* Primary Background — the canvas everything sits on          */
+  /* Not pure black — pure black feels flat and cheap            */
+  /* This specific value has a subtle blue undertone              */
+  /* that reads as premium dark on all screens                    */
+  --color-bg-primary:       #0A0A0F;
+
+  /* Secondary Background — elevated surfaces (cards, panels)    */
+  /* Slightly lighter — creates depth without being obvious       */
+  --color-bg-secondary:     #111118;
+
+  /* Tertiary Background — hover states, inputs, subtle panels   */
+  --color-bg-tertiary:      #1A1A24;
+
+  /* ── ACCENT COLORS ───────────────────────────────────────── */
+
+  /* Primary Accent — THE signature color of this portfolio      */
+  /* Electric violet-blue — sits between blue and purple         */
+  /* Communicates: AI, technology, future, intelligence           */
+  /* This exact value was chosen for:                             */
+  /*   - Maximum visual impact on dark backgrounds               */
+  /*   - Association with AI/ML/advanced technology              */
+  /*   - Uniqueness — not the typical developer blue              */
+  /*   - WCAG AA contrast compliance on dark bg                  */
+  --color-accent-primary:   #6C63FF;
+
+  /* Accent Hover — slightly brighter for hover/active states    */
+  --color-accent-hover:     #7C74FF;
+
+  /* Accent Muted — for backgrounds, tags, subtle highlights     */
+  /* Low opacity version of primary accent                       */
+  --color-accent-muted:     rgba(108, 99, 255, 0.12);
+
+  /* Accent Glow — for box-shadow glow effects                   */
+  --color-accent-glow:      rgba(108, 99, 255, 0.35);
+
+  /* Accent Border — for bordered elements using accent color     */
+  --color-accent-border:    rgba(108, 99, 255, 0.3);
+
+  /* ── TEXT COLORS ─────────────────────────────────────────── */
+
+  /* Primary Text — the most important content                   */
+  /* Warm off-white — pure white feels harsh and clinical        */
+  /* This exact tone feels premium and easy on the eyes          */
+  --color-text-primary:     #F0EFFF;
+
+  /* Secondary Text — supporting content, descriptions           */
+  --color-text-secondary:   #A0A0B8;
+
+  /* Tertiary Text — timestamps, labels, fine print              */
+  --color-text-tertiary:    #606078;
+
+  /* Disabled Text — unavailable states                          */
+  --color-text-disabled:    #3A3A50;
+
+  /* Inverse Text — text on accent/light backgrounds             */
+  --color-text-inverse:     #0A0A0F;
+
+  /* ── BORDER COLORS ───────────────────────────────────────── */
+
+  /* Primary Border — card edges, dividers, section separators   */
+  --color-border-primary:   rgba(255, 255, 255, 0.06);
+
+  /* Secondary Border — stronger borders for emphasis            */
+  --color-border-secondary: rgba(255, 255, 255, 0.12);
+
+  /* Focus Border — keyboard focus ring color                    */
+  --color-border-focus:     #6C63FF;
+
+  /* ── SEMANTIC COLORS ─────────────────────────────────────── */
+
+  /* Success — open to work badge, form success states           */
+  --color-success:          #22C55E;
+  --color-success-muted:    rgba(34, 197, 94, 0.12);
+
+  /* Warning — attention states                                  */
+  --color-warning:          #F59E0B;
+  --color-warning-muted:    rgba(245, 158, 11, 0.12);
+
+  /* Error — form validation errors                              */
+  --color-error:            #EF4444;
+  --color-error-muted:      rgba(239, 68, 68, 0.12);
+
+  /* ── GRADIENT DEFINITIONS ────────────────────────────────── */
+
+  /* Hero gradient — subtle bg depth behind 3D scene             */
+  --gradient-hero:
+    radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      rgba(108, 99, 255, 0.15),
+      transparent
+    );
+
+  /* Section gradient — subtle depth separating sections         */
+  --gradient-section:
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(108, 99, 255, 0.03) 50%,
+      transparent 100%
+    );
+
+  /* Accent gradient — used on CTAs, featured elements           */
+  --gradient-accent:
+    linear-gradient(135deg, #6C63FF 0%, #9C94FF 100%);
+
+  /* Text gradient — for display headlines (optional use)        */
+  --gradient-text:
+    linear-gradient(135deg, #F0EFFF 0%, #A0A0B8 100%);
+
+  /* Card gradient — subtle shimmer on card surfaces             */
+  --gradient-card:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.03) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+  /* ── SURFACE OVERLAYS ────────────────────────────────────── */
+
+  /* Scrim — full screen dark overlay for modals                 */
+  --color-scrim:            rgba(0, 0, 0, 0.8);
+
+  /* Glass — frosted glass background for floating elements      */
+  --color-glass:            rgba(17, 17, 24, 0.8);
+  --color-glass-border:     rgba(255, 255, 255, 0.08);
+
+  /* ── TYPE SCALE ──────────────────────────────────────────── */
+
+  /* Display — Clash Display only                               */
+  --text-display-2xl:  clamp(72px, 10vw, 140px);   /* Hero name                  */
+  --text-display-xl:   clamp(56px, 7vw, 100px);    /* Major section headlines     */
+  --text-display-lg:   clamp(40px, 5vw, 72px);     /* Sub-headlines, CTA text     */
+  --text-display-md:   clamp(32px, 4vw, 56px);     /* Card titles, process steps  */
+  --text-display-sm:   clamp(24px, 3vw, 40px);     /* Minor headings              */
+
+  /* Body — Satoshi only                                        */
+  --text-body-xl:      20px;    /* Lead paragraph, intro text                     */
+  --text-body-lg:      18px;    /* Primary body copy                               */
+  --text-body-md:      16px;    /* Standard body copy (default)                    */
+  --text-body-sm:      14px;    /* Secondary info, card meta                       */
+  --text-body-xs:      12px;    /* Fine print, timestamps, labels                  */
+
+  /* Mono — JetBrains Mono only                                */
+  --text-mono-md:      15px;    /* Tech tags, code snippets                        */
+  --text-mono-sm:      13px;    /* Small labels, metadata                          */
+
+  /* ── LINE HEIGHTS ─────────────────────────────────────────── */
+
+  /* Display text — tight, creates impact                       */
+  --leading-display:   0.95;    /* Hero headlines — very tight                     */
+  --leading-heading:   1.1;     /* Section headings                                */
+  --leading-subhead:   1.2;     /* Subheadings                                     */
+
+  /* Body text — relaxed, maximizes readability                 */
+  --leading-body:      1.7;     /* All body paragraphs                             */
+  --leading-body-sm:   1.5;     /* Short body text, captions                       */
+  --leading-mono:      1.6;     /* Code and technical text                         */
+
+  /* ── LETTER SPACING ──────────────────────────────────────── */
+
+  /* Display — negative tracking creates premium feel           */
+  --tracking-display-tight:   -0.04em;   /* Hero name (very large text)            */
+  --tracking-display-normal:  -0.02em;   /* Section headings                       */
+
+  /* Body — default or slightly open                            */
+  --tracking-body:            0em;       /* All body text — default               */
+  --tracking-body-wide:       0.02em;    /* Button labels                         */
+
+  /* Labels — wide tracking for uppercase labels                */
+  --tracking-label:           0.08em;   /* Uppercase category labels               */
+  --tracking-label-wide:      0.12em;   /* Section eyebrow labels                  */
+
+  /* ── SPACING SCALE ────────────────────────────────────────── */
+  --space-1:    4px;
+  --space-2:    8px;
+  --space-3:    12px;
+  --space-4:    16px;
+  --space-5:    20px;
+  --space-6:    24px;
+  --space-8:    32px;
+  --space-10:   40px;
+  --space-12:   48px;
+  --space-16:   64px;
+  --space-20:   80px;
+  --space-24:   96px;
+  --space-32:   128px;
+  --space-40:   160px;
+  --space-48:   192px;
+
+  /* ── SECTION SPACING ─────────────────────────────────────── */
+  /* The generous space between sections is critical            */
+  /* This is where the premium feel comes from                  */
+  --section-padding-y:   clamp(80px, 12vw, 160px);
+  --section-padding-x:   clamp(24px, 6vw, 80px);
+
+  /* ── CONTAINER ───────────────────────────────────────────── */
+  --container-max-width: 1200px;
+  --container-padding:   clamp(16px, 4vw, 40px);
+
+  /* ── BORDER RADIUS ───────────────────────────────────────── */
+  --radius-sm:    6px;    /* Tags, badges, small elements      */
+  --radius-md:    12px;   /* Buttons, inputs                   */
+  --radius-lg:    16px;   /* Cards                             */
+  --radius-xl:    24px;   /* Large panels                      */
+  --radius-full:  9999px; /* Pills, circular elements          */
+
+  /* ── DURATIONS ──────────────────────────────────────────── */
+  --duration-instant:   0.1s;    /* State toggles — too fast to notice as animation   */
+  --duration-fast:      0.2s;    /* Hover states, micro interactions                   */
+  --duration-normal:    0.4s;    /* Standard component animations                      */
+  --duration-slow:      0.6s;    /* Section entrances, major reveals                   */
+  --duration-slower:    0.9s;    /* Cinematic text reveals, hero entrance               */
+  --duration-slowest:   1.2s;    /* Loader animation, full scene transitions            */
+
+  /* ── GSAP SPECIFIC DURATIONS ─────────────────────────────── */
+  /* Note: GSAP uses seconds not ms                             */
+  /* --duration-fast    = 0.2  in GSAP                         */
+  /* --duration-normal  = 0.4  in GSAP                         */
+  /* --duration-slow    = 0.6  in GSAP                         */
+  /* --duration-slower  = 0.9  in GSAP                         */
+  /* --duration-slowest = 1.2  in GSAP                         */
+
+  /* ── EASING CURVES ──────────────────────────────────────── */
+  /* CSS easing values for Motion (motion/react) components    */
+  --ease-smooth:      cubic-bezier(0.25, 0.46, 0.45, 0.94);  /* Natural deceleration  */
+  --ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1);     /* Slight overshoot       */
+  --ease-in:          cubic-bezier(0.4, 0, 1, 1);            /* Acceleration           */
+  --ease-out:         cubic-bezier(0, 0, 0.2, 1);            /* Deceleration           */
+  --ease-in-out:      cubic-bezier(0.4, 0, 0.2, 1);         /* Both                   */
+
+  /* ── Z-INDEX SCALE ───────────────────────────────────────── */
+  --z-base:       0;      /* Static content                     */
+  --z-raised:     10;     /* Cards on hover                      */
+  --z-sticky:     100;    /* Sticky navigation                   */
+  --z-overlay:    200;    /* Section overlays, scroll-lock masks */
+  --z-modal:      300;    /* Modals, drawers                     */
+  --z-toast:      400;    /* Notification toasts                 */
+  --z-cursor:     500;    /* Custom cursor — always on top       */
+  --z-loader:     1000;   /* Loader — above everything           */
+
+}
