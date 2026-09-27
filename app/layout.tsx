@@ -1,26 +1,20 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
-import localFont from "next/font/local";
+import { Fraunces, Figtree, JetBrains_Mono } from "next/font/google";
 
 import "@/styles/globals.css";
 
-const clashDisplay = localFont({
-  src: [
-    { path: "../public/fonts/clash-display/ClashDisplay-Medium.woff2", weight: "500" },
-    { path: "../public/fonts/clash-display/ClashDisplay-Semibold.woff2", weight: "600" },
-    { path: "../public/fonts/clash-display/ClashDisplay-Bold.woff2", weight: "700" },
-  ],
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
   variable: "--font-display",
   display: "swap",
   preload: true,
 });
 
-const satoshi = localFont({
-  src: [
-    { path: "../public/fonts/satoshi/Satoshi-Regular.woff2", weight: "400" },
-    { path: "../public/fonts/satoshi/Satoshi-Medium.woff2", weight: "500" },
-    { path: "../public/fonts/satoshi/Satoshi-Bold.woff2", weight: "700" },
-  ],
+const figtree = Figtree({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
   variable: "--font-body",
   display: "swap",
   preload: true,
@@ -47,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${clashDisplay.variable} ${satoshi.variable} ${jetbrainsMono.variable}`}
+      className={`${fraunces.variable} ${figtree.variable} ${jetbrainsMono.variable}`}
     >
       <body className="bg-bg-primary text-text-primary font-body antialiased">
         {children}

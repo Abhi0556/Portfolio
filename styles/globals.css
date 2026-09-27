@@ -8,61 +8,51 @@
   /* ── FOUNDATION COLORS ────────────────────────────────────── */
 
   /* Primary Background — the canvas everything sits on          */
-  /* Not pure black — pure black feels flat and cheap            */
-  /* This specific value has a subtle blue undertone              */
-  /* that reads as premium dark on all screens                    */
-  --color-bg-primary:       #0A0A0F;
+  /* Deep, warm-toned near-black-green — not pure black, which   */
+  /* reads flat and cheap across large dark surfaces             */
+  --color-bg-primary:       #0D120E;
 
   /* Secondary Background — elevated surfaces (cards, panels)    */
-  /* Slightly lighter — creates depth without being obvious       */
-  --color-bg-secondary:     #111118;
+  --color-bg-secondary:     #172019;
 
   /* Tertiary Background — hover states, inputs, subtle panels   */
-  --color-bg-tertiary:      #1A1A24;
+  --color-bg-tertiary:      #202B22;
 
   /* ── ACCENT COLORS ───────────────────────────────────────── */
 
   /* Primary Accent — THE signature color of this portfolio      */
-  /* Electric violet-blue — sits between blue and purple         */
-  /* Communicates: AI, technology, future, intelligence           */
-  /* This exact value was chosen for:                             */
-  /*   - Maximum visual impact on dark backgrounds               */
-  /*   - Association with AI/ML/advanced technology              */
-  /*   - Uniqueness — not the typical developer blue              */
-  /*   - WCAG AA contrast compliance on dark bg                  */
-  --color-accent-primary:   #6C63FF;
+  /* Lime/nectar green. Reserved for primary CTAs, links, active */
+  /* nav and glow effects. RULE 02 — never a second accent       */
+  --color-accent-primary:   #C5F75A;
 
-  /* Accent Hover — slightly brighter for hover/active states    */
-  --color-accent-hover:     #7C74FF;
+  /* Accent Hover — brighter variant for hover/active states     */
+  --color-accent-hover:     #E7F768;
 
   /* Accent Muted — for backgrounds, tags, subtle highlights     */
-  /* Low opacity version of primary accent                       */
-  --color-accent-muted:     rgba(108, 99, 255, 0.12);
+  --color-accent-muted:     rgba(197, 247, 90, 0.12);
 
   /* Accent Glow — for box-shadow glow effects                   */
-  --color-accent-glow:      rgba(108, 99, 255, 0.35);
+  --color-accent-glow:      rgba(197, 247, 90, 0.35);
 
   /* Accent Border — for bordered elements using accent color     */
-  --color-accent-border:    rgba(108, 99, 255, 0.3);
+  --color-accent-border:    rgba(197, 247, 90, 0.3);
 
   /* ── TEXT COLORS ─────────────────────────────────────────── */
 
-  /* Primary Text — the most important content                   */
-  /* Warm off-white — pure white feels harsh and clinical        */
-  /* This exact tone feels premium and easy on the eyes          */
-  --color-text-primary:     #F0EFFF;
+  /* Primary Text — headlines, name, titles                      */
+  --color-text-primary:     #F5F5EE;
 
-  /* Secondary Text — supporting content, descriptions           */
-  --color-text-secondary:   #A0A0B8;
+  /* Secondary Text — body copy, descriptions                    */
+  --color-text-secondary:   #BAC5B8;
 
-  /* Tertiary Text — timestamps, labels, fine print              */
-  --color-text-tertiary:    #606078;
+  /* Tertiary Text — labels, timestamps, fine print              */
+  --color-text-tertiary:    #7A867A;
 
   /* Disabled Text — unavailable states                          */
-  --color-text-disabled:    #3A3A50;
+  --color-text-disabled:    #3E4A3F;
 
-  /* Inverse Text — text on accent/light backgrounds             */
-  --color-text-inverse:     #0A0A0F;
+  /* Inverse Text — dark text inside the bright accent           */
+  --color-text-inverse:     #10150F;
 
   /* ── BORDER COLORS ───────────────────────────────────────── */
 
@@ -73,13 +63,15 @@
   --color-border-secondary: rgba(255, 255, 255, 0.12);
 
   /* Focus Border — keyboard focus ring color                    */
-  --color-border-focus:     #6C63FF;
+  --color-border-focus:     #C5F75A;
 
   /* ── SEMANTIC COLORS ─────────────────────────────────────── */
 
   /* Success — open to work badge, form success states           */
-  --color-success:          #22C55E;
-  --color-success-muted:    rgba(34, 197, 94, 0.12);
+  /* Deliberately blue, not green: green is the brand accent, so */
+  /* a green success state would read as a second accent (RULE 02) */
+  --color-success:          #3B82F6;
+  --color-success-muted:    rgba(59, 130, 246, 0.12);
 
   /* Warning — attention states                                  */
   --color-warning:          #F59E0B;
@@ -95,7 +87,7 @@
   --gradient-hero:
     radial-gradient(
       ellipse 80% 50% at 50% -20%,
-      rgba(108, 99, 255, 0.15),
+      rgba(197, 247, 90, 0.12),
       transparent
     );
 
@@ -104,17 +96,17 @@
     linear-gradient(
       180deg,
       transparent 0%,
-      rgba(108, 99, 255, 0.03) 50%,
+      rgba(197, 247, 90, 0.03) 50%,
       transparent 100%
     );
 
   /* Accent gradient — used on CTAs, featured elements           */
   --gradient-accent:
-    linear-gradient(135deg, #6C63FF 0%, #9C94FF 100%);
+    linear-gradient(135deg, #C5F75A 0%, #E7F768 100%);
 
   /* Text gradient — for display headlines (optional use)        */
   --gradient-text:
-    linear-gradient(135deg, #F0EFFF 0%, #A0A0B8 100%);
+    linear-gradient(135deg, #F5F5EE 0%, #BAC5B8 100%);
 
   /* Card gradient — subtle shimmer on card surfaces             */
   --gradient-card:
@@ -130,54 +122,66 @@
   --color-scrim:            rgba(0, 0, 0, 0.8);
 
   /* Glass — frosted glass background for floating elements      */
-  --color-glass:            rgba(17, 17, 24, 0.8);
+  --color-glass:            rgba(23, 32, 25, 0.8);
   --color-glass-border:     rgba(255, 255, 255, 0.08);
 
   /* ── TYPE SCALE ──────────────────────────────────────────── */
 
-  /* Display — Clash Display only                               */
-  --text-display-2xl:  clamp(72px, 10vw, 140px);   /* Hero name                  */
-  --text-display-xl:   clamp(56px, 7vw, 100px);    /* Major section headlines     */
-  --text-display-lg:   clamp(40px, 5vw, 72px);     /* Sub-headlines, CTA text     */
-  --text-display-md:   clamp(32px, 4vw, 56px);     /* Card titles, process steps  */
-  --text-display-sm:   clamp(24px, 3vw, 40px);     /* Minor headings              */
+  /* Display — Fraunces. Four reserved uses only (RULE 05):      */
+  /* hero name, each section heading, the About philosophy       */
+  /* statement, the Contact closing CTA                          */
+  --text-display-2xl:  clamp(2.5rem, 1.5rem + 4vw, 5rem);      /* 40–80px           */
+  --text-display-xl:   clamp(2rem, 1.4rem + 3vw, 3.5rem);      /* 32–56px           */
+  --text-display-lg:   clamp(1.75rem, 1.3rem + 2vw, 2.75rem);  /* 28–44px           */
+  --text-display-sm:   clamp(1.25rem, 1.1rem + 1vw, 1.75rem);  /* 20–28px           */
 
-  /* Body — Satoshi only                                        */
-  --text-body-xl:      20px;    /* Lead paragraph, intro text                     */
-  --text-body-lg:      18px;    /* Primary body copy                               */
-  --text-body-md:      16px;    /* Standard body copy (default)                    */
-  --text-body-sm:      14px;    /* Secondary info, card meta                       */
-  --text-body-xs:      12px;    /* Fine print, timestamps, labels                  */
+  /* Heading — Figtree Semibold. Every heading-like element      */
+  /* Fraunces does not own: project/card titles, company names,  */
+  /* step titles, footer name                                    */
+  --text-heading-lg:   clamp(1.5rem, 1.3rem + 1vw, 2rem);        /* 24–32px         */
+  --text-heading-md:   clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);  /* 20–24px         */
 
-  /* Mono — JetBrains Mono only                                */
-  --text-mono-md:      15px;    /* Tech tags, code snippets                        */
-  --text-mono-sm:      13px;    /* Small labels, metadata                          */
+  /* Body — Figtree                                             */
+  --text-body-xl:      1.25rem;    /* 20px — lead paragraph, intro text           */
+  --text-body-lg:      1.0625rem;  /* 17px — primary body copy                    */
+  --text-body-md:      1rem;       /* 16px — standard body copy (default)          */
+  --text-body-sm:      0.875rem;   /* 14px — secondary info, card meta            */
+  --text-body-xs:      0.75rem;    /* 12px — fine print, timestamps, labels       */
+
+  /* Mono — JetBrains Mono                                      */
+  --text-mono-md:      0.9375rem;  /* 15px — tech tags, code snippets             */
+  --text-mono-sm:      0.8125rem;  /* 13px — small labels, metadata               */
 
   /* ── LINE HEIGHTS ─────────────────────────────────────────── */
 
   /* Display text — tight, creates impact                       */
-  --leading-display:   0.95;    /* Hero headlines — very tight                     */
-  --leading-heading:   1.1;     /* Section headings                                */
-  --leading-subhead:   1.2;     /* Subheadings                                     */
+  --leading-display:   1.08;    /* Hero headlines — tight                          */
+  --leading-heading:   1.2;     /* Section headings, card titles                   */
 
   /* Body text — relaxed, maximizes readability                 */
-  --leading-body:      1.7;     /* All body paragraphs                             */
-  --leading-body-sm:   1.5;     /* Short body text, captions                       */
+  --leading-body:      1.65;    /* All body paragraphs                             */
+  --leading-body-sm:   1.45;    /* Short body text, captions                       */
   --leading-mono:      1.6;     /* Code and technical text                         */
 
   /* ── LETTER SPACING ──────────────────────────────────────── */
 
-  /* Display — negative tracking creates premium feel           */
-  --tracking-display-tight:   -0.04em;   /* Hero name (very large text)            */
-  --tracking-display-normal:  -0.02em;   /* Section headings                       */
+  /* Restrained — deliberately no aggressive negative tracking   */
+  --tracking-display-tight:   -0.015em;  /* Hero name (very large text)            */
+  --tracking-display-normal:  -0.01em;   /* Section headings                       */
 
   /* Body — default or slightly open                            */
-  --tracking-body:            0em;       /* All body text — default               */
-  --tracking-body-wide:       0.02em;    /* Button labels                         */
+  --tracking-body:            0em;       /* All body text — default                */
+  --tracking-body-wide:       0.02em;    /* Button labels                          */
 
   /* Labels — wide tracking for uppercase labels                */
   --tracking-label:           0.08em;   /* Uppercase category labels               */
   --tracking-label-wide:      0.12em;   /* Section eyebrow labels                  */
+
+  /* ── LINE-LENGTH DISCIPLINE ──────────────────────────────── */
+  /* Text must not run edge-to-edge on wide viewports            */
+  --measure-hero:   20ch;  /* Hero headline max-width                    */
+  --measure-intro:  44ch;  /* Introductory paragraph max-width           */
+  --measure-body:   62ch;  /* Case-study / body copy max-width           */
 
   /* ── SPACING SCALE ────────────────────────────────────────── */
   --space-1:    4px;
@@ -199,7 +203,7 @@
   /* ── SECTION SPACING ─────────────────────────────────────── */
   /* The generous space between sections is critical            */
   /* This is where the premium feel comes from                  */
-  --section-padding-y:   clamp(80px, 12vw, 160px);
+  --section-padding-y:   clamp(72px, 10vw, 140px);
   --section-padding-x:   clamp(24px, 6vw, 80px);
 
   /* ── CONTAINER ───────────────────────────────────────────── */
@@ -209,7 +213,7 @@
   /* ── BORDER RADIUS ───────────────────────────────────────── */
   --radius-sm:    6px;    /* Tags, badges, small elements      */
   --radius-md:    12px;   /* Buttons, inputs                   */
-  --radius-lg:    16px;   /* Cards                             */
+  --radius-lg:    20px;   /* Cards — media/card radius 20-24px */
   --radius-xl:    24px;   /* Large panels                      */
   --radius-full:  9999px; /* Pills, circular elements          */
 
