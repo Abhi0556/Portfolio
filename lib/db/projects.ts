@@ -72,9 +72,10 @@ export async function createProject(
       ? data.tags
       : "[]";
 
+    const now = new Date().toISOString();
     const result = await db
       .insert(projects)
-      .values({ ...data, tags: tagsStr })
+      .values({ ...data, tags: tagsStr, createdAt: now, updatedAt: now })
       .returning();
     return parseTags(result[0]);
   } catch (error) {

@@ -74,7 +74,11 @@ export async function createSkill(
   data: Omit<SkillInsert, "id" | "createdAt" | "updatedAt">
 ): Promise<Skill> {
   try {
-    const result = await db.insert(skills).values(data).returning();
+    const now = new Date().toISOString();
+    const result = await db
+      .insert(skills)
+      .values({ ...data, createdAt: now, updatedAt: now })
+      .returning();
     return result[0];
   } catch (error) {
     console.error("[createSkill]", error);

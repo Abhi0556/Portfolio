@@ -32,7 +32,11 @@ export async function createProcess(
   data: Omit<ProcessInsert, "id" | "createdAt" | "updatedAt">
 ): Promise<Process> {
   try {
-    const result = await db.insert(process).values(data).returning();
+    const now = new Date().toISOString();
+    const result = await db
+      .insert(process)
+      .values({ ...data, createdAt: now, updatedAt: now })
+      .returning();
     return result[0];
   } catch (error) {
     console.error("[createProcess]", error);

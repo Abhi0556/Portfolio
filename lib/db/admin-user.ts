@@ -29,12 +29,15 @@ export async function createAdminUser(
     if (existing.length > 0) {
       throw new Error("Admin user already exists");
     }
+    const now = new Date().toISOString();
     const result = await db
       .insert(adminUser)
       .values({
         id: 1,
         email: data.email,
         passwordHash: data.passwordHash,
+        createdAt: now,
+        updatedAt: now,
       })
       .returning();
     return result[0];

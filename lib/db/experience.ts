@@ -60,9 +60,10 @@ export async function createExperience(
       ? data.bullets
       : "[]";
 
+    const now = new Date().toISOString();
     const result = await db
       .insert(experience)
-      .values({ ...data, bullets: bulletsStr })
+      .values({ ...data, bullets: bulletsStr, createdAt: now, updatedAt: now })
       .returning();
     return parseBullets(result[0]);
   } catch (error) {

@@ -110,7 +110,7 @@ export const contactSchema = z.object({
   name: z.string().min(1).max(100),
   email: z.string().email().max(254),
   message: z.string().min(10).max(2000),
-  website: z.string().max(0, "Bot detected"), // honeypot
+  website: z.string().default(""), // honeypot — checked in route handler
   submittedAt: z.number().int().positive(),
 });
 
@@ -127,3 +127,9 @@ export const reorderSchema = z.object({
     .array(z.object({ id: z.number().int().positive(), displayOrder: z.number().int().min(0) }))
     .min(1),
 });
+
+// ─── UPLOAD DELETE ───────────────────────────────────────────────────
+export const deleteFileSchema = z.object({
+  fileId: z.string().min(1, "fileId is required"),
+});
+

@@ -36,7 +36,11 @@ export async function createTestimonial(
   data: Omit<TestimonialInsert, "id" | "createdAt" | "updatedAt">
 ): Promise<Testimonial> {
   try {
-    const result = await db.insert(testimonials).values(data).returning();
+    const now = new Date().toISOString();
+    const result = await db
+      .insert(testimonials)
+      .values({ ...data, createdAt: now, updatedAt: now })
+      .returning();
     return result[0];
   } catch (error) {
     console.error("[createTestimonial]", error);
