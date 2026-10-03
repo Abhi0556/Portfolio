@@ -36,6 +36,7 @@ export async function updateMeta(
   data: Partial<MetaInsert> & { customLinks?: CustomLink[] | string }
 ): Promise<MetaWithParsedLinks> {
   try {
+    const existing = await getMeta(db);
     const updatePayload: Record<string, unknown> = {
       ...data,
       updatedAt: new Date().toISOString(),
@@ -45,7 +46,29 @@ export async function updateMeta(
       updatePayload.customLinks = JSON.stringify(data.customLinks);
     }
 
-    await db.update(meta).set(updatePayload).where(eq(meta.id, 1));
+    if (!existing) {
+      await db.insert(meta).values({
+        ...updatePayload,
+        id: 1,
+        name: data.name ?? "",
+        title: data.title ?? "",
+        tagline: data.tagline ?? "",
+        location: data.location ?? "",
+        aboutText: data.aboutText ?? "",
+        aboutImageUrl: data.aboutImageUrl ?? "",
+        email: data.email ?? "",
+        resumeUrl: data.resumeUrl ?? "",
+        footerTagline: data.footerTagline ?? "",
+        isOpenToWork: data.isOpenToWork ?? true,
+        githubUrl: data.githubUrl ?? "",
+        linkedinUrl: data.linkedinUrl ?? "",
+        twitterUrl: data.twitterUrl ?? "",
+        customLinks: typeof updatePayload.customLinks === "string" ? updatePayload.customLinks : "[]",
+      } as MetaInsert);
+    } else {
+      await db.update(meta).set(updatePayload).where(eq(meta.id, 1));
+    }
+
     const updated = await getMeta(db);
     if (!updated) {
       throw new Error("Meta record missing after update");
