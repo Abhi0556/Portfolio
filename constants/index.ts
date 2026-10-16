@@ -1,5 +1,10 @@
 // constants/index.ts
 
+// Owner identity — Loader choreography depends on OWNER_NICKNAME being a
+// prefix of OWNER_NAME ("ABHI" keeps, "SHEK" dissolves)
+export const OWNER_NAME = "ABHISHEK";
+export const OWNER_NICKNAME = "ABHI";
+
 export const SECTION_IDS = {
   LOADER: "loader",
   HERO: "hero",

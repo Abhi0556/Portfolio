@@ -68,6 +68,13 @@ const config: Config = {
         xl:   "var(--radius-xl)",
         full: "var(--radius-full)",
       },
+      letterSpacing: {
+        label: "var(--tracking-label)",
+        "label-wide": "var(--tracking-label-wide)",
+      },
+      zIndex: {
+        loader: "var(--z-loader)",
+      },
       transitionDuration: {
         instant: "var(--duration-instant)",
         fast:    "var(--duration-fast)",

@@ -10,95 +10,99 @@
   /* Primary Background — the canvas everything sits on          */
   /* Deep, warm-toned near-black-green — not pure black, which   */
   /* reads flat and cheap across large dark surfaces             */
-  --color-bg-primary:       #0D120E;
+  --color-bg-primary: #0D120E;
+
+  /* Stage Text — loader white-stage colors (BRAND RULE 01 exception) */
+  /* The loader opens on a white stage (owner decision), so these
+     colors are dark text values legible against that white/light
+     background. Used only by the Loader component's pre-JS paint guard
+     and GSAP color tweens. Not for general use.                      */
+  --color-stage-text: #0E120F;
+  --color-stage-text-muted: #9AAF98;
 
   /* Secondary Background — elevated surfaces (cards, panels)    */
-  --color-bg-secondary:     #172019;
+  --color-bg-secondary: #172019;
 
   /* Tertiary Background — hover states, inputs, subtle panels   */
-  --color-bg-tertiary:      #202B22;
+  --color-bg-tertiary: #202B22;
 
   /* ── ACCENT COLORS ───────────────────────────────────────── */
 
   /* Primary Accent — THE signature color of this portfolio      */
   /* Lime/nectar green. Reserved for primary CTAs, links, active */
   /* nav and glow effects. RULE 02 — never a second accent       */
-  --color-accent-primary:   #C5F75A;
+  --color-accent-primary: #C5F75A;
 
   /* Accent Hover — brighter variant for hover/active states     */
-  --color-accent-hover:     #E7F768;
+  --color-accent-hover: #E7F768;
 
   /* Accent Muted — for backgrounds, tags, subtle highlights     */
-  --color-accent-muted:     rgba(197, 247, 90, 0.12);
+  --color-accent-muted: rgba(197, 247, 90, 0.12);
 
   /* Accent Glow — for box-shadow glow effects                   */
-  --color-accent-glow:      rgba(197, 247, 90, 0.35);
+  --color-accent-glow: rgba(197, 247, 90, 0.35);
 
   /* Accent Border — for bordered elements using accent color     */
-  --color-accent-border:    rgba(197, 247, 90, 0.3);
+  --color-accent-border: rgba(197, 247, 90, 0.3);
 
   /* ── TEXT COLORS ─────────────────────────────────────────── */
 
   /* Primary Text — headlines, name, titles                      */
-  --color-text-primary:     #F5F5EE;
+  --color-text-primary: #F5F5EE;
 
   /* Secondary Text — body copy, descriptions                    */
-  --color-text-secondary:   #BAC5B8;
+  --color-text-secondary: #BAC5B8;
 
   /* Tertiary Text — labels, timestamps, fine print              */
-  --color-text-tertiary:    #7A867A;
+  --color-text-tertiary: #7A867A;
 
   /* Disabled Text — unavailable states                          */
-  --color-text-disabled:    #3E4A3F;
+  --color-text-disabled: #3E4A3F;
 
   /* Inverse Text — dark text inside the bright accent           */
-  --color-text-inverse:     #10150F;
+  --color-text-inverse: #10150F;
 
   /* ── BORDER COLORS ───────────────────────────────────────── */
 
   /* Primary Border — card edges, dividers, section separators   */
-  --color-border-primary:   rgba(255, 255, 255, 0.06);
+  --color-border-primary: rgba(255, 255, 255, 0.06);
 
   /* Secondary Border — stronger borders for emphasis            */
   --color-border-secondary: rgba(255, 255, 255, 0.12);
 
   /* Focus Border — keyboard focus ring color                    */
-  --color-border-focus:     #C5F75A;
+  --color-border-focus: #C5F75A;
 
   /* ── SEMANTIC COLORS ─────────────────────────────────────── */
 
   /* Success — open to work badge, form success states           */
   /* Deliberately blue, not green: green is the brand accent, so */
   /* a green success state would read as a second accent (RULE 02) */
-  --color-success:          #3B82F6;
-  --color-success-muted:    rgba(59, 130, 246, 0.12);
+  --color-success: #3B82F6;
+  --color-success-muted: rgba(59, 130, 246, 0.12);
 
   /* Warning — attention states                                  */
-  --color-warning:          #F59E0B;
-  --color-warning-muted:    rgba(245, 158, 11, 0.12);
+  --color-warning: #F59E0B;
+  --color-warning-muted: rgba(245, 158, 11, 0.12);
 
   /* Error — form validation errors                              */
-  --color-error:            #EF4444;
-  --color-error-muted:      rgba(239, 68, 68, 0.12);
+  --color-error: #EF4444;
+  --color-error-muted: rgba(239, 68, 68, 0.12);
 
   /* ── GRADIENT DEFINITIONS ────────────────────────────────── */
 
   /* Hero gradient — subtle bg depth behind 3D scene             */
   --gradient-hero:
-    radial-gradient(
-      ellipse 80% 50% at 50% -20%,
+    radial-gradient(ellipse 80% 50% at 50% -20%,
       rgba(197, 247, 90, 0.12),
-      transparent
-    );
+      transparent);
 
   /* Section gradient — subtle depth separating sections         */
   --gradient-section:
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       transparent 0%,
       rgba(197, 247, 90, 0.03) 50%,
-      transparent 100%
-    );
+      transparent 100%);
 
   /* Accent gradient — used on CTAs, featured elements           */
   --gradient-accent:
@@ -110,120 +114,156 @@
 
   /* Card gradient — subtle shimmer on card surfaces             */
   --gradient-card:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       rgba(255, 255, 255, 0.03) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
+      rgba(255, 255, 255, 0) 100%);
 
   /* ── SURFACE OVERLAYS ────────────────────────────────────── */
 
   /* Scrim — full screen dark overlay for modals                 */
-  --color-scrim:            rgba(0, 0, 0, 0.8);
+  --color-scrim: rgba(0, 0, 0, 0.8);
 
   /* Glass — frosted glass background for floating elements      */
-  --color-glass:            rgba(23, 32, 25, 0.8);
-  --color-glass-border:     rgba(255, 255, 255, 0.08);
+  --color-glass: rgba(23, 32, 25, 0.8);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
 
   /* ── TYPE SCALE ──────────────────────────────────────────── */
 
   /* Display — Fraunces. Four reserved uses only (RULE 05):      */
   /* hero name, each section heading, the About philosophy       */
   /* statement, the Contact closing CTA                          */
-  --text-display-2xl:  clamp(2.5rem, 1.5rem + 4vw, 5rem);      /* 40–80px           */
-  --text-display-xl:   clamp(2rem, 1.4rem + 3vw, 3.5rem);      /* 32–56px           */
-  --text-display-lg:   clamp(1.75rem, 1.3rem + 2vw, 2.75rem);  /* 28–44px           */
-  --text-display-sm:   clamp(1.25rem, 1.1rem + 1vw, 1.75rem);  /* 20–28px           */
+  --text-display-2xl: clamp(2.5rem, 1.5rem + 4vw, 5rem);
+  /* 40–80px           */
+  --text-display-xl: clamp(2rem, 1.4rem + 3vw, 3.5rem);
+  /* 32–56px           */
+  --text-display-lg: clamp(1.75rem, 1.3rem + 2vw, 2.75rem);
+  /* 28–44px           */
+  --text-display-sm: clamp(1.25rem, 1.1rem + 1vw, 1.75rem);
+  /* 20–28px           */
 
   /* Heading — Figtree Semibold. Every heading-like element      */
   /* Fraunces does not own: project/card titles, company names,  */
   /* step titles, footer name                                    */
-  --text-heading-lg:   clamp(1.5rem, 1.3rem + 1vw, 2rem);        /* 24–32px         */
-  --text-heading-md:   clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);  /* 20–24px         */
+  --text-heading-lg: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  /* 24–32px         */
+  --text-heading-md: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  /* 20–24px         */
 
   /* Body — Figtree                                             */
-  --text-body-xl:      1.25rem;    /* 20px — lead paragraph, intro text           */
-  --text-body-lg:      1.0625rem;  /* 17px — primary body copy                    */
-  --text-body-md:      1rem;       /* 16px — standard body copy (default)          */
-  --text-body-sm:      0.875rem;   /* 14px — secondary info, card meta            */
-  --text-body-xs:      0.75rem;    /* 12px — fine print, timestamps, labels       */
+  --text-body-xl: 1.25rem;
+  /* 20px — lead paragraph, intro text           */
+  --text-body-lg: 1.0625rem;
+  /* 17px — primary body copy                    */
+  --text-body-md: 1rem;
+  /* 16px — standard body copy (default)          */
+  --text-body-sm: 0.875rem;
+  /* 14px — secondary info, card meta            */
+  --text-body-xs: 0.75rem;
+  /* 12px — fine print, timestamps, labels       */
 
   /* Mono — JetBrains Mono                                      */
-  --text-mono-md:      0.9375rem;  /* 15px — tech tags, code snippets             */
-  --text-mono-sm:      0.8125rem;  /* 13px — small labels, metadata               */
+  --text-mono-md: 0.9375rem;
+  /* 15px — tech tags, code snippets             */
+  --text-mono-sm: 0.8125rem;
+  /* 13px — small labels, metadata               */
 
   /* ── LINE HEIGHTS ─────────────────────────────────────────── */
 
   /* Display text — tight, creates impact                       */
-  --leading-display:   1.08;    /* Hero headlines — tight                          */
-  --leading-heading:   1.2;     /* Section headings, card titles                   */
+  --leading-display: 1.08;
+  /* Hero headlines — tight                          */
+  --leading-heading: 1.2;
+  /* Section headings, card titles                   */
 
   /* Body text — relaxed, maximizes readability                 */
-  --leading-body:      1.65;    /* All body paragraphs                             */
-  --leading-body-sm:   1.45;    /* Short body text, captions                       */
-  --leading-mono:      1.6;     /* Code and technical text                         */
+  --leading-body: 1.65;
+  /* All body paragraphs                             */
+  --leading-body-sm: 1.45;
+  /* Short body text, captions                       */
+  --leading-mono: 1.6;
+  /* Code and technical text                         */
 
   /* ── LETTER SPACING ──────────────────────────────────────── */
 
   /* Restrained — deliberately no aggressive negative tracking   */
-  --tracking-display-tight:   -0.015em;  /* Hero name (very large text)            */
-  --tracking-display-normal:  -0.01em;   /* Section headings                       */
+  --tracking-display-tight: -0.015em;
+  /* Hero name (very large text)            */
+  --tracking-display-normal: -0.01em;
+  /* Section headings                       */
 
   /* Body — default or slightly open                            */
-  --tracking-body:            0em;       /* All body text — default                */
-  --tracking-body-wide:       0.02em;    /* Button labels                          */
+  --tracking-body: 0em;
+  /* All body text — default                */
+  --tracking-body-wide: 0.02em;
+  /* Button labels                          */
 
   /* Labels — wide tracking for uppercase labels                */
-  --tracking-label:           0.08em;   /* Uppercase category labels               */
-  --tracking-label-wide:      0.12em;   /* Section eyebrow labels                  */
+  --tracking-label: 0.08em;
+  /* Uppercase category labels               */
+  --tracking-label-wide: 0.12em;
+  /* Section eyebrow labels                  */
 
   /* ── LINE-LENGTH DISCIPLINE ──────────────────────────────── */
   /* Text must not run edge-to-edge on wide viewports            */
-  --measure-hero:   20ch;  /* Hero headline max-width                    */
-  --measure-intro:  44ch;  /* Introductory paragraph max-width           */
-  --measure-body:   62ch;  /* Case-study / body copy max-width           */
+  --measure-hero: 20ch;
+  /* Hero headline max-width                    */
+  --measure-intro: 44ch;
+  /* Introductory paragraph max-width           */
+  --measure-body: 62ch;
+  /* Case-study / body copy max-width           */
 
   /* ── SPACING SCALE ────────────────────────────────────────── */
-  --space-1:    4px;
-  --space-2:    8px;
-  --space-3:    12px;
-  --space-4:    16px;
-  --space-5:    20px;
-  --space-6:    24px;
-  --space-8:    32px;
-  --space-10:   40px;
-  --space-12:   48px;
-  --space-16:   64px;
-  --space-20:   80px;
-  --space-24:   96px;
-  --space-32:   128px;
-  --space-40:   160px;
-  --space-48:   192px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --space-40: 160px;
+  --space-48: 192px;
 
   /* ── SECTION SPACING ─────────────────────────────────────── */
   /* The generous space between sections is critical            */
   /* This is where the premium feel comes from                  */
-  --section-padding-y:   clamp(72px, 10vw, 140px);
-  --section-padding-x:   clamp(24px, 6vw, 80px);
+  --section-padding-y: clamp(72px, 10vw, 140px);
+  --section-padding-x: clamp(24px, 6vw, 80px);
 
   /* ── CONTAINER ───────────────────────────────────────────── */
   --container-max-width: 1200px;
-  --container-padding:   clamp(16px, 4vw, 40px);
+  --container-padding: clamp(16px, 4vw, 40px);
 
   /* ── BORDER RADIUS ───────────────────────────────────────── */
-  --radius-sm:    6px;    /* Tags, badges, small elements      */
-  --radius-md:    12px;   /* Buttons, inputs                   */
-  --radius-lg:    20px;   /* Cards — media/card radius 20-24px */
-  --radius-xl:    24px;   /* Large panels                      */
-  --radius-full:  9999px; /* Pills, circular elements          */
+  --radius-sm: 6px;
+  /* Tags, badges, small elements      */
+  --radius-md: 12px;
+  /* Buttons, inputs                   */
+  --radius-lg: 20px;
+  /* Cards — media/card radius 20-24px */
+  --radius-xl: 24px;
+  /* Large panels                      */
+  --radius-full: 9999px;
+  /* Pills, circular elements          */
 
   /* ── DURATIONS ──────────────────────────────────────────── */
-  --duration-instant:   0.1s;    /* State toggles — too fast to notice as animation   */
-  --duration-fast:      0.2s;    /* Hover states, micro interactions                   */
-  --duration-normal:    0.4s;    /* Standard component animations                      */
-  --duration-slow:      0.6s;    /* Section entrances, major reveals                   */
-  --duration-slower:    0.9s;    /* Cinematic text reveals, hero entrance               */
-  --duration-slowest:   1.2s;    /* Loader animation, full scene transitions            */
+  --duration-instant: 0.1s;
+  /* State toggles — too fast to notice as animation   */
+  --duration-fast: 0.2s;
+  /* Hover states, micro interactions                   */
+  --duration-normal: 0.4s;
+  /* Standard component animations                      */
+  --duration-slow: 0.6s;
+  /* Section entrances, major reveals                   */
+  --duration-slower: 0.9s;
+  /* Cinematic text reveals, hero entrance               */
+  --duration-slowest: 1.2s;
+  /* Loader animation, full scene transitions            */
 
   /* ── GSAP SPECIFIC DURATIONS ─────────────────────────────── */
   /* Note: GSAP uses seconds not ms                             */
@@ -235,20 +275,33 @@
 
   /* ── EASING CURVES ──────────────────────────────────────── */
   /* CSS easing values for Motion (motion/react) components    */
-  --ease-smooth:      cubic-bezier(0.25, 0.46, 0.45, 0.94);  /* Natural deceleration  */
-  --ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1);     /* Slight overshoot       */
-  --ease-in:          cubic-bezier(0.4, 0, 1, 1);            /* Acceleration           */
-  --ease-out:         cubic-bezier(0, 0, 0.2, 1);            /* Deceleration           */
-  --ease-in-out:      cubic-bezier(0.4, 0, 0.2, 1);         /* Both                   */
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Natural deceleration  */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* Slight overshoot       */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  /* Acceleration           */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  /* Deceleration           */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  /* Both                   */
 
   /* ── Z-INDEX SCALE ───────────────────────────────────────── */
-  --z-base:       0;      /* Static content                     */
-  --z-raised:     10;     /* Cards on hover                      */
-  --z-sticky:     100;    /* Sticky navigation                   */
-  --z-overlay:    200;    /* Section overlays, scroll-lock masks */
-  --z-modal:      300;    /* Modals, drawers                     */
-  --z-toast:      400;    /* Notification toasts                 */
-  --z-cursor:     500;    /* Custom cursor — always on top       */
-  --z-loader:     1000;   /* Loader — above everything           */
+  --z-base: 0;
+  /* Static content                     */
+  --z-raised: 10;
+  /* Cards on hover                      */
+  --z-sticky: 100;
+  /* Sticky navigation                   */
+  --z-overlay: 200;
+  /* Section overlays, scroll-lock masks */
+  --z-modal: 300;
+  /* Modals, drawers                     */
+  --z-toast: 400;
+  /* Notification toasts                 */
+  --z-cursor: 500;
+  /* Custom cursor — always on top       */
+  --z-loader: 1000;
+  /* Loader — above everything           */
 
 }

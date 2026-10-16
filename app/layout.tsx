@@ -14,7 +14,7 @@ const fraunces = Fraunces({
 
 const figtree = Figtree({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-body",
   display: "swap",
   preload: true,
@@ -42,8 +42,15 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${fraunces.variable} ${figtree.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
     >
-      <body className="bg-bg-primary text-text-primary font-body antialiased">
+      {/* suppressHydrationWarning: browser extensions (e.g. ColorZilla)
+          inject attributes like cz-shortcut-listen onto <body> before React
+          hydrates — a benign external mutation, not a code mismatch */}
+      <body
+        className="bg-bg-primary text-text-primary font-body antialiased"
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>
